@@ -1,0 +1,36 @@
+﻿@page "/productList"
+@using System.Text.Json
+@using WebShopShared
+@rendermode InteractiveServer
+@inject IHttpClientFactory HttpClientFactory
+
+<h3>Products List</h3>
+
+<button @onclick="async() => await FetchData()">Get All Products</button>
+@foreach (var product in productList)
+{
+    <div class="card">
+        <img src="@product?.Image" width="250" height="400">
+        <p>@product?.Category</p>
+        <p>@product?.Title</p>
+        <p>@product?.Description</p>
+        <p>@product?.Price</p>
+    </div>
+}
+
+@code {
+    private List<ApiDTO>? productList = new();
+    private async Task FetchData()
+    {
+        using (HttpClient? client = HttpClientFactory.CreateClient("FakeStoreApi"))
+        {
+            var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+            var json = await client.GetStringAsync("/products?limit=10");
+            productList = JsonSerializer.Deserialize<List<ApiDTO>>(json, options);
+        }
+    }
+}
