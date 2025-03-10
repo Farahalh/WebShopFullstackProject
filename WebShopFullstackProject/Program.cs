@@ -12,6 +12,16 @@ public class Program
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
+        builder.Services.AddHttpClient("FakeStoreApi", client =>
+        {
+            client.BaseAddress = new Uri("https://fakestoreapi.com");
+        });
+
+        builder.Services.AddHttpClient("MinimalApi", client =>
+        {
+            client.BaseAddress = new Uri("https://localhost:7210");
+        });
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
@@ -22,12 +32,14 @@ public class Program
             app.UseHsts();
         }
 
+
+
         app.UseHttpsRedirection();
 
         app.UseAntiforgery();
 
         app.MapStaticAssets();
-        app.MapRazorComponents<App>()
+        app.MapRazorComponents<WebShopFullstackProject.Components.App>()
             .AddInteractiveServerRenderMode();
 
         app.Run();
