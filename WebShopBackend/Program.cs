@@ -33,11 +33,7 @@ namespace WebShopBackend
     {
         public static List<ProductDTO> GetProducts()
         {
-            return new List<ProductDTO>()
-            {
-                new ProductDTO() { ID = 1, Name = "Bike", Description = "Super cool", ImageUrl = "img1", Price = 3000, Currency = "SEK"},
-                new ProductDTO() { ID = 2, Name = "Car", Description = "Super fast", ImageUrl = "img2", Price = 50000, Currency = "SEK"},
-            };
+            return [];
         }
 
         public static ProductDTO? GetProduct(int id)
