@@ -17,10 +17,10 @@ public class Program
             client.BaseAddress = new Uri("https://fakestoreapi.com");
         });
 
-        builder.Services.AddHttpClient("MinimalApi", client =>
-        {
-            client.BaseAddress = new Uri("https://localhost:7210");
-        });
+        //builder.Services.AddHttpClient("MinimalApi", client =>
+        //{
+        //    client.BaseAddress = new Uri("https://localhost:7210");
+        //});
 
         var app = builder.Build();
 
@@ -31,8 +31,6 @@ public class Program
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
-
-
 
         app.UseHttpsRedirection();
 
