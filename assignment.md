@@ -2,21 +2,21 @@
 
 ## For Pass (Godkänt)
 
-- [ ] The app must have a homepage (page) with a list of products (components).
-  - [ ] The app must include at least 10 products.
-  - [ ] A product must contain the following information:
+- [x] The app must have a homepage (page) with a list of products (components).
+  - [x] The app must include at least 10 products.
+  - [x] A product must contain the following information:
     - ID
     - Name
     - Description
     - Image URL
     - Price
-- [ ] Products must be displayed using Razor components on the homepage.
-  - [ ] These components should not display all product details but only an overview.
+- [x] Products must be displayed using Razor components on the homepage.
+  - [x] These components should not display all product details but only an overview.
   - [ ] The component must include a button to add the product to a shopping cart.
   - [ ] The shopping cart must be stored in localStorage (optional for VG, not required).
-- [ ] A REST API must be used to access the products.
-  - [ ] However, product data can be hardcoded in the API.
-- [ ] Clicking on a product component should navigate to a product page (page) displaying all product details.
+- [x] A REST API must be used to access the products.
+  - [x] However, product data can be hardcoded in the API.
+- [x] Clicking on a product component should navigate to a product page (page) displaying all product details.
   - [ ] On this page, it should also be possible to add the product to the shopping cart.
   - [ ] It must be possible to navigate to the product page via the browser's search bar (e.g., `localhost/product/1`).
 - [ ] It must be possible to navigate to the shopping cart (page) via a button/link.
@@ -29,15 +29,15 @@
   - [ ] Purchased products
   - [ ] Name and address from the form
   - [ ] When the order is completed, the shopping cart must be emptied.
-- [ ] At least 2 components (excluding pages/Layout) must be used.
-- [ ] All data in the "Pass" scenario can be static (hardcoded).
+- [x] At least 2 components (excluding pages/Layout) must be used.
+- [x] All data in the "Pass" scenario can be static (hardcoded).
 - [ ] HTML must be used correctly and validated.
   - [ ] Semantic elements should be used where possible.
 - [ ] CSS must be well-structured and contribute to GUI/UX.
-  - [ ] The app must be responsive and adapted for both mobile and desktop.
+  - [x] The app must be responsive and adapted for both mobile and desktop.
   - [x] No CSS framework (Bootstrap, Tailwind, etc.) may be used.
 - [x] Use the Blazor Web App template.
-  - [ ] It is not necessary to combine different render modes.
+  <!-- - [x] It is not necessary to combine different render modes. -->
   - [x] A single project in your solution is sufficient for a passing grade.
 
 ---
@@ -45,7 +45,7 @@
 ## For High Pass (Väl Godkänt)
 
 - [ ] All criteria for a passing grade must be met (localStorage can be excluded).
-  - [ ] Blazor Web App must use both Server-side and Client-side rendering.
+  - [x] Blazor Web App must use both Server-side and Client-side rendering.
 - [ ] At least 4 components (excluding pages/Layout) must be designed and used.
 - [ ] Product quantities must be handled:
   - [ ] Products should be able to be sold out.
@@ -62,10 +62,10 @@
 - [ ] The site must remember what a user has added to the cart for their next login.
 - [ ] A purchase must not be completed without being logged in.
   - [ ] Information should be retrieved from the server via an HTTP request to an API endpoint.
-- [ ] Shared classes must be used in both the Frontend and Backend.
+- [x] Shared classes must be used in both the Frontend and Backend.
 - [ ] The app must be divided into 3 projects, such as:
-  - [ ] **WebshopFrontend:** UI, pages, components.
-  - [ ] **WebshopBackend:** API endpoints and business logic.
-  - [ ] **WebshopShared:** A separate library for shared models, DTOs, and validation logic.
-- [ ] In the root of your project (next to the `.sln` file), there must be an `Analysis.md` file documenting and demonstrating how you used .NET Core debugging tools and logging systems to identify, analyze, and fix at least one specific bug in the application, including a short reflection on the debugging process.
+  - [x] **WebshopFrontend:** UI, pages, components.
+  - [x] **WebshopBackend:** API endpoints and business logic.
+  - [x] **WebshopShared:** A separate library for shared models, DTOs, and validation logic.
+- [x] In the root of your project (next to the `.sln` file), there must be an `Analysis.md` file documenting and demonstrating how you used .NET Core debugging tools and logging systems to identify, analyze, and fix at least one specific bug in the application, including a short reflection on the debugging process.
 - [x] Additionally, there must be an `Assignment.md` file where you copy all the criteria (Pass + High Pass) and check off each completed task.
