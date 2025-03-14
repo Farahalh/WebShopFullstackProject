@@ -1,0 +1,35 @@
+﻿@page "/productDetails/{Id:int}"
+@using WebShopShared
+@rendermode InteractiveServer
+@inject IHttpClientFactory HttpClientFactory
+
+<h3>Api</h3>
+
+<button @onclick="async() => await FetchData()">Get Product</button>
+
+<div class="card">
+    <img src="@api?.Image" width="250" height="300">
+    <p>@api?.Category</p>
+    <p>@api?.Title</p>
+    <p>@api?.Description</p>
+    <p>@api?.Price</p>
+</div>
+
+@*Missing functionality *@
+<button>Add to Cart</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    private ProductDTO? api;
+
+
+    //OnIntitalizedAsync
+    private async Task FetchData()
+    {
+        using (HttpClient? client = HttpClientFactory.CreateClient("FakeStoreApi"))
+        {
+            api = await client.GetFromJsonAsync<ProductDTO>($"/products/{Id}");
+        }
+    }
+}
