@@ -18,7 +18,7 @@
   - [x] However, product data can be hardcoded in the API.
 - [x] Clicking on a product component should navigate to a product page (page) displaying all product details.
   - [ ] On this page, it should also be possible to add the product to the shopping cart.
-  - [ ] It must be possible to navigate to the product page via the browser's search bar (e.g., `localhost/product/1`).
+  - [x] It must be possible to navigate to the product page via the browser's search bar (e.g., `localhost/product/1`).
 - [ ] It must be possible to navigate to the shopping cart (page) via a button/link.
   - [ ] The shopping cart page must display the contents of the cart.
   - [ ] The shopping cart page must include a form to enter address details.
