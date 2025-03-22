@@ -5,27 +5,22 @@
 
 <h3>Api</h3>
 
-<button @onclick="async() => await FetchData()">Get Product</button>
-
 <div class="card">
     <img src="@api?.Image" width="250" height="300">
+    <p>api?.ID</p>
     <p>@api?.Category</p>
     <p>@api?.Title</p>
     <p>@api?.Description</p>
     <p>@api?.Price</p>
+    <button>Add to Cart</button>
 </div>
-
-@*Missing functionality *@
-<button>Add to Cart</button>
 
 @code {
     [Parameter]
     public int Id { get; set; }
     private ProductDTO? api;
 
-
-    //OnIntitalizedAsync
-    private async Task FetchData()
+    protected override async Task OnInitializedAsync()
     {
         using (HttpClient? client = HttpClientFactory.CreateClient("FakeStoreApi"))
         {
