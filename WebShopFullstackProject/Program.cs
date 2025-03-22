@@ -17,11 +17,6 @@ public class Program
             client.BaseAddress = new Uri("https://fakestoreapi.com");
         });
 
-        //builder.Services.AddHttpClient("MinimalApi", client =>
-        //{
-        //    client.BaseAddress = new Uri("https://localhost:7210");
-        //});
-
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
