@@ -6,26 +6,20 @@
 
 <h3>Products List</h3>
 
-<button @onclick="async() => await FetchData()">Get All Products</button>
 @foreach (var product in productList)
 {
     <div class="card">
         <a href="/ProductDetails/@product.ID"><img src="@product?.Image" width="250" height="300"></a>
         <p>@product?.Category</p>
-        <p>@product?.Title</p>
-    </div>
-
-    <div>
-        @* Missing functionality *@
-        <button>Product Page</button>
-
+        <a href="/ProductDetails/@product?.ID"><p>@product?.Title</p></a>
         <button>Add to Cart</button>
     </div>
 }
 
 @code {
     private List<ProductDTO>? productList = new();
-    private async Task FetchData()
+
+    protected override async Task OnInitializedAsync()
     {
         using (HttpClient? client = HttpClientFactory.CreateClient("FakeStoreApi"))
         {
